@@ -3,8 +3,27 @@ import React from "react"
 import {Link,graphql,useStaticQuery} from 'gatsby';
 import Navegacion from './navegacion'
 import {css} from '@emotion/core';
+import styled from '@emotion/styled';
 
 
+
+const NavLink = styled(Link)`
+        color:white;
+        padding: .5rem;
+        font-weigth:700;sas
+        font-family : "Lato", sans-serif;
+        text-decoration: overline;
+        
+        &last-of-type{
+            margin-right:0;
+        }
+
+        &.pagina-actual{
+            border-bottom: 2px solid white;
+        }
+
+
+`
 const Header = () => {
 
   //consulta para traer el logo
@@ -19,7 +38,6 @@ const Header = () => {
   
   `)
     
-
   return(
     <header 
       css={css`
@@ -33,6 +51,7 @@ const Header = () => {
           max-width :120rem;
           margin: 0 auto;
           text-align:center;
+          text-decotarion:none;
 
           @media (min-width:768px){
             display:flex;
@@ -44,13 +63,12 @@ const Header = () => {
         `}
         
       > 
-       
             <Link to="/">
               <img src={logo.publicURL} alt="logo bienes raices"  width="50px;"/> 
+               <NavLink activeClassName="pagina-actual" >DiFuentes</NavLink>
             </Link>
             
-      
-           
+            
             
             <Navegacion/>
       </div>
@@ -58,7 +76,6 @@ const Header = () => {
     </header>
   );
 };
-
 
 
 export default Header

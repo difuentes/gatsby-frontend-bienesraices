@@ -4,13 +4,13 @@ import UseInicio from "../hooks/useinicio";
 import {css} from '@emotion/core';
 import styled from '@emotion/styled';
 
+import heroCSS from '../css/hero.module.css';
 
 const HomeInicio =  styled.div`
     text-align: center; 
     max-width:800px;
     margin: 0 auto;
 `
-
 
 const IndexPage = () => {
 
@@ -22,12 +22,18 @@ const IndexPage = () => {
  
   return(
         <Layout>
+          <div>
+        
+              <img
+                tag="section" 
+                src={imagen.publicURL}
+                css={css`height:600px;width:100%;opacity: 0.9;`}
+              /> 
+          
 
-          <img
-           tag="section" 
-           src={imagen.publicURL}
-           css={css`height:600px;width:100%;opacity: 0.9;`}
-          /> 
+          </div>
+
+      
 
           <HomeInicio >
             <h1 css={css`margin-top:0;color:orange;font-weight: 700; margin-bottom: 0;`}>{nombre}</h1>
